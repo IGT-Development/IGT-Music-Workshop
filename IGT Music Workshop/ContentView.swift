@@ -9,16 +9,53 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            NavigationView {
+                FirstView()
+            }
+            .tabItem {
+                Label("Songs", systemImage: "music.note")
+            }
+
+            NavigationView {
+                SecondView()
+            }
+            .tabItem {
+                Label("Home", systemImage: "house.fill")
+            }
+
+            NavigationView {
+                ThirdView()
+            }
+            .tabItem {
+                Label("Albums", systemImage: "opticaldisc.fill")
+            }
         }
-        .padding()
     }
 }
 
+struct FirstView: View {
+    var body: some View {
+        Text("Это первый экран")
+            .navigationBarTitle("Первый экран", displayMode: .inline)
+    }
+}
+
+struct SecondView: View {
+    var body: some View {
+        Text("Это второй экран")
+            .navigationBarTitle("Второй экран", displayMode: .inline)
+    }
+}
+
+struct ThirdView: View {
+    var body: some View {
+        Text("Это третий экран")
+            .navigationBarTitle("Третий экран", displayMode: .inline)
+    }
+}
+    
+    
 #Preview {
     ContentView()
 }
