@@ -11,7 +11,7 @@ import SwiftUI
 struct IGT_Music_WorkshopApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }

@@ -14,6 +14,8 @@
 		4A3B7FA62B53C0EE000C47F0 /* IGT_Music_WorkshopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FA52B53C0EE000C47F0 /* IGT_Music_WorkshopTests.swift */; };
 		4A3B7FB02B53C0EE000C47F0 /* IGT_Music_WorkshopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FAF2B53C0EE000C47F0 /* IGT_Music_WorkshopUITests.swift */; };
 		4A3B7FB22B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */; };
+		4AC53C3D2B64507B00746C27 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC53C3C2B64507B00746C27 /* LoginView.swift */; };
+		4AC53C3F2B64516800746C27 /* AuraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC53C3E2B64516800746C27 /* AuraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4A3B7FAB2B53C0EE000C47F0 /* IGT Music WorkshopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IGT Music WorkshopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3B7FAF2B53C0EE000C47F0 /* IGT_Music_WorkshopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopUITests.swift; sourceTree = "<group>"; };
 		4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4AC53C3C2B64507B00746C27 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4AC53C3E2B64516800746C27 /* AuraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */,
 				4A3B7F962B53C0EB000C47F0 /* ContentView.swift */,
+				4AC53C3C2B64507B00746C27 /* LoginView.swift */,
+				4AC53C3E2B64516800746C27 /* AuraView.swift */,
 				4A3B7F982B53C0EE000C47F0 /* Assets.xcassets */,
 				4A3B7F9A2B53C0EE000C47F0 /* Preview Content */,
 			);
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC53C3D2B64507B00746C27 /* LoginView.swift in Sources */,
+				4AC53C3F2B64516800746C27 /* AuraView.swift in Sources */,
 				4A3B7F972B53C0EB000C47F0 /* ContentView.swift in Sources */,
 				4A3B7F952B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift in Sources */,
 			);
@@ -422,6 +430,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IGT Music Workshop/Preview Content\"";
+				DEVELOPMENT_TEAM = KASPKC8937;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IGT Music Workshop/Preview Content\"";
+				DEVELOPMENT_TEAM = KASPKC8937;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
