@@ -17,34 +17,40 @@ struct AuroraView: View {
         static let blurRadius: CGFloat = 160
     }
     
+    @Binding var loginAttempted: Bool?
+    @Binding var loginSuccessful: Bool?
+    
+    init(loginAttempted: Binding<Bool?> = .constant(nil), loginSuccessful: Binding<Bool?> = .constant(nil)) {
+        self._loginAttempted = loginAttempted
+        self._loginSuccessful = loginSuccessful
+    }
+    
     @State private var timer = Timer.publish(every: AnimationProperties.timerDuration, on: .main, in: .common).autoconnect()
     @StateObject private var animator = CircleAnimator(colors: AuroraColors.all)
     
     var body: some View {
-        ZStack{
-            ZStack {
-                ForEach(animator.circles) { circle in
-                    MovingCircle(originOffset: circle.position)
-                        .foregroundColor(circle.color)
-                }
-            }
-            .background(AuroraColors.backgroundColor)
-            .blur(radius: AnimationProperties.blurRadius)
-            
-            .onDisappear {
-                timer.upstream.connect().cancel()
-            }
-            .onTapGesture {
-                animateCircles()
-                timer = Timer.publish(every: AnimationProperties.timerDuration, on: .main, in: .common).autoconnect()
-            }
-            .onReceive(timer) { _ in
-                animateCircles()
+        ZStack {
+            ForEach(animator.circles) { circle in
+                MovingCircle(originOffset: circle.position)
+                    .foregroundColor(
+                        loginAttempted ?? false && loginSuccessful ?? true
+                        ? .red.opacity(0.2)
+                        : circle.color
+                    )
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .animation(.easeInOut(duration: AnimationProperties.animationSpeed))
-
+        .background(AuroraColors.backgroundColor)
+        .blur(radius: AnimationProperties.blurRadius)
+        
+        .onDisappear {
+            timer.upstream.connect().cancel()
+        }
+        .onReceive(timer) { _ in
+            animateCircles()
+        }
+        .onAppear() {
+            timer = Timer.publish(every: AnimationProperties.timerDuration, on: .main, in: .common).autoconnect()
+        }
     }
     
     private func animateCircles() {

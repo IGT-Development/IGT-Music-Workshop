@@ -12,6 +12,7 @@ struct IGT_Music_WorkshopApp: App {
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environment(\.colorScheme, .dark)
         }
     }
 }
