@@ -11,13 +11,11 @@ import Foundation
 struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var isUsernameValid: Bool = true
+    @State private var isPasswordValid: Bool = true
     @State private var isRegistrationActive: Bool? = false
     @State private var loginAttempted: Bool? = false
     @State private var loginSuccessful: Bool? = false
-    
-    // Состояния для отображения ошибок
-    @State private var isUsernameValid: Bool = true
-    @State private var isPasswordValid: Bool = true
     
     var body: some View {
         NavigationView {
@@ -35,50 +33,8 @@ struct LoginView: View {
                             .font(.title)
                             .bold()
                             .foregroundColor(.white)
-                        HStack(spacing: 16) {
-                            Image(systemName: "person.fill")
-                                .foregroundColor(.accentColor)
-                            TextField("", text: $username, prompt: Text("Логин").foregroundColor(.white))
-                                .multilineTextAlignment(.leading)
-                                .font(.title3)
-                                .bold()
-                                .disableAutocorrection(true)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(loginAttempted ?? false ? (isUsernameValid ? Color.white.opacity(0.3) : Color.red.opacity(0.3)) : Color.white.opacity(0.3))
-                        )
-                        .autocapitalization(.none)
-                        .textContentType(.emailAddress)
-                        .onChange(of: username) { newValue in
-                            isUsernameValid = ValidationHelper.isValidUsername(newValue)
-                        }
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(loginAttempted ?? false ? (isUsernameValid ? Color.white : Color.red) : Color.white, lineWidth: 2)
-                        )
-                        HStack(spacing: 16) {
-                            Image(systemName: "lock.fill")
-                                .foregroundColor(.accentColor)
-                            SecureField("", text: $password, prompt: Text("Пароль").foregroundColor(.white))
-                                .multilineTextAlignment(.leading)
-                                .font(.title3)
-                                .bold()
-                                .disableAutocorrection(true)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(loginAttempted ?? false ? (isPasswordValid ? Color.white.opacity(0.3) : Color.red.opacity(0.3)) : Color.white.opacity(0.3))
-                        )
-                        .onChange(of: password) { newValue in
-                            isPasswordValid = ValidationHelper.isValidPassword(newValue)
-                        }
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(loginAttempted ?? false ? (isPasswordValid ? Color.white : Color.red) : Color.white, lineWidth: 2)
-                        )
+                        TextFields(textForPlaceholder: "Логин", iconName: "person.fill", loginAttempted: loginAttempted ?? false)
+                        SecureFields(textForPlaceholder: "Пароль", image: "lock.fill", loginAttempted: loginAttempted ?? false)
                         Button(action: {
                             loginAttempted = true
                             loginSuccessful = ValidationHelper.isValidInput(username: isUsernameValid, password: isPasswordValid)
@@ -116,22 +72,6 @@ struct LoginView: View {
             .background(AuroraView(loginAttempted: $loginAttempted, loginSuccessful: $loginSuccessful))
         }
     }
-//    
-//    private func isValidInput() -> Bool {
-//        return isUsernameValid && isPasswordValid ? false : true
-//    }
-//    
-//    private func validateUsername(_ input: String) {
-//        let range = NSRange(location: 0, length: input.utf16.count)
-//        let matches = usernameRegex.matches(in: input, options: [], range: range)
-//        isUsernameValid = !matches.isEmpty
-//    }
-//    
-//    private func validatePassword(_ input: String) {
-//        let range = NSRange(location: 0, length: input.utf16.count)
-//        let matches = passwordRegex.matches(in: input, options: [], range: range)
-//        isPasswordValid = !matches.isEmpty
-//    }
 }
 
 //struct ContentView_Previews: PreviewProvider {
