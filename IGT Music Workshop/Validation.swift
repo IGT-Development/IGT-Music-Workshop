@@ -23,7 +23,7 @@ struct ValidationHelper {
     }
     
     static func isValidInput(username: Bool, password: Bool) -> Bool {
-        return username && password ? false : true
+        return username && password
     }
 }
 

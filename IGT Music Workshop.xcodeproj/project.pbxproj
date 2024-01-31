@@ -16,6 +16,7 @@
 		4A3B7FB22B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */; };
 		4A6552F42B658CE7004996FC /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6552F32B658CE7004996FC /* Validation.swift */; };
 		4A6552F62B66B9CB004996FC /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6552F52B66B9CB004996FC /* TextFields.swift */; };
+		4A6552F82B67C280004996FC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6552F72B67C280004996FC /* RegistrationView.swift */; };
 		4AC53C3D2B64507B00746C27 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC53C3C2B64507B00746C27 /* LoginView.swift */; };
 		4AC53C3F2B64516800746C27 /* AuraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC53C3E2B64516800746C27 /* AuraView.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4A6552F32B658CE7004996FC /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		4A6552F52B66B9CB004996FC /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		4A6552F72B67C280004996FC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		4AC53C3C2B64507B00746C27 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4AC53C3E2B64516800746C27 /* AuraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */,
 				4A3B7F962B53C0EB000C47F0 /* ContentView.swift */,
 				4AC53C3C2B64507B00746C27 /* LoginView.swift */,
+				4A6552F72B67C280004996FC /* RegistrationView.swift */,
 				4A6552F52B66B9CB004996FC /* TextFields.swift */,
 				4A6552F32B658CE7004996FC /* Validation.swift */,
 				4AC53C3E2B64516800746C27 /* AuraView.swift */,
@@ -272,6 +275,7 @@
 				4AC53C3D2B64507B00746C27 /* LoginView.swift in Sources */,
 				4AC53C3F2B64516800746C27 /* AuraView.swift in Sources */,
 				4A3B7F972B53C0EB000C47F0 /* ContentView.swift in Sources */,
+				4A6552F82B67C280004996FC /* RegistrationView.swift in Sources */,
 				4A6552F42B658CE7004996FC /* Validation.swift in Sources */,
 				4A3B7F952B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift in Sources */,
 				4A6552F62B66B9CB004996FC /* TextFields.swift in Sources */,

@@ -13,9 +13,9 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var isUsernameValid: Bool = true
     @State private var isPasswordValid: Bool = true
-    @State private var isRegistrationActive: Bool? = false
-    @State private var loginAttempted: Bool? = false
-    @State private var loginSuccessful: Bool? = false
+    @State private var isRegistrationActive: Bool = false
+    @State private var loginAttempted: Bool = false
+    @State private var loginSuccessful: Bool = false
     
     var body: some View {
         NavigationView {
@@ -33,11 +33,15 @@ struct LoginView: View {
                             .font(.title)
                             .bold()
                             .foregroundColor(.white)
-                        TextFields(textForPlaceholder: "Логин", iconName: "person.fill", loginAttempted: loginAttempted ?? false)
-                        SecureFields(textForPlaceholder: "Пароль", image: "lock.fill", loginAttempted: loginAttempted ?? false)
+                        StartTextFields(fieldText: $username,textForPlaceholder: "Логин", iconName: "person.fill", loginAttempted: loginAttempted, secureContext: .username)
+                        StartSecureFields(secureText: $password ,textForPlaceholder: "Пароль", image: "lock.fill", loginAttempted: loginAttempted, secureContext: .password)
+                        
                         Button(action: {
+                            isUsernameValid = ValidationHelper.isValidUsername(username)
+                            isPasswordValid = ValidationHelper.isValidPassword(password)
                             loginAttempted = true
                             loginSuccessful = ValidationHelper.isValidInput(username: isUsernameValid, password: isPasswordValid)
+                            print(loginSuccessful)
                         }) {
                             Text("Войти")
                                 .padding(16)
@@ -54,22 +58,22 @@ struct LoginView: View {
                         HStack {
                             Text("Нет аккаунта?")
                                 .foregroundColor(.white)
-                            NavigationLink(
-                                destination: RegistrationView(),
-                                tag: true,
-                                selection: $isRegistrationActive,
-                                label: {
-                                    Text("Зарегистрируйтесь!")
-                                        .foregroundColor(.accentColor)
-                                }
-                            )
+                            Button(action: {
+                                isRegistrationActive = true
+                            }) {
+                                Text("Зарегистрируйтесь!")
+                                    .foregroundColor(.accentColor)
+                            }
+                            .sheet(isPresented: $isRegistrationActive) {
+                                RegistrationView()
+                            }
                         }
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
             }
-            .background(AuroraView(loginAttempted: $loginAttempted, loginSuccessful: $loginSuccessful))
+            .background(AuroraView(loginAttempted: loginAttempted, loginSuccessful: loginSuccessful))
         }
     }
 }
@@ -79,24 +83,4 @@ struct LoginView: View {
 //        LoginView()
 //    }
 //}
-
-
-
-
-struct RegistrationView: View {
-    var body: some View {
-        ZStack{
-            ZStack {
-                Text("IGT \nMUSIC WORKSHOP")
-                    .font(.largeTitle)
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.accentColor)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-        }
-        .background(AuroraView())
-    }
-}
 

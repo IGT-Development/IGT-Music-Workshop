@@ -8,85 +8,90 @@
 import Foundation
 import SwiftUI
 
-struct SecureFields: View {
+struct StartSecureFields: View {
     
     private var textForPlaceholder: String
     private var image: String
     private var loginAttempted: Bool
-    @State private var password: String
+    private var secureContext: UITextContentType
+    @Binding private var secureText: String
     @State private var isPasswordValid: Bool = false
     
-    init(textForPlaceholder: String, image: String, loginAttempted: Bool) {
-        self.textForPlaceholder = textForPlaceholder
-        self.image = image
-        self.loginAttempted = loginAttempted
-        self._password = State(initialValue: "")
-    }
+    init(secureText: Binding<String>, textForPlaceholder: String, image: String, loginAttempted: Bool, secureContext: UITextContentType) {
+            self.textForPlaceholder = textForPlaceholder
+            self.image = image
+            self.loginAttempted = loginAttempted
+            self._secureText = secureText
+            self.secureContext = secureContext
+        }
     
     var body: some View {
         HStack(spacing: 16) {
             Image(systemName: image)
                 .foregroundColor(.accentColor)
-            SecureField("", text: $password, prompt: Text(textForPlaceholder).foregroundColor(.white))
+            SecureField("", text: $secureText, prompt: Text(textForPlaceholder).foregroundColor(.white))
                 .multilineTextAlignment(.leading)
                 .font(.title3)
                 .bold()
-                .disableAutocorrection(true)
+                .textContentType(secureContext)
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(loginAttempted ?? false ? (isPasswordValid ? Color.white.opacity(0.3) : Color.red.opacity(0.3)) : Color.white.opacity(0.3))
+                .fill(loginAttempted ? (isPasswordValid ? Color.white.opacity(0.3) : Color.red.opacity(0.3)) : Color.white.opacity(0.3))
         )
-        .onChange(of: password) { newValue in
+        .onChange(of: secureText) { newValue in
             isPasswordValid = ValidationHelper.isValidPassword(newValue)
         }
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(loginAttempted ?? false ? (isPasswordValid ? Color.white : Color.red) : Color.white, lineWidth: 2)
+                .stroke(loginAttempted ? (isPasswordValid ? Color.white : Color.red) : Color.white, lineWidth: 2)
         )
     }
 }
 
-struct TextFields: View {
+struct StartTextFields: View {
     
     private var textForPlaceholder: String
     private var iconName: String
     private var loginAttempted: Bool
+    private var secureContext: UITextContentType
     
-    @State private var username: String
+    @Binding var fieldText: String
     @State private var isUsernameValid: Bool = false
     
-    init(textForPlaceholder: String, iconName: String, loginAttempted: Bool) {
+    init(fieldText: Binding<String>, textForPlaceholder: String, iconName: String, loginAttempted: Bool, secureContext: UITextContentType) {
+        self._fieldText = fieldText
         self.textForPlaceholder = textForPlaceholder
         self.iconName = iconName
         self.loginAttempted = loginAttempted
-        self._username = State(initialValue: "")
+        self.secureContext = secureContext
     }
     
     var body: some View {
             HStack(spacing: 16) {
                 Image(systemName: iconName)
                     .foregroundColor(.accentColor)
-                TextField("", text: $username, prompt: Text(textForPlaceholder).foregroundColor(.white))
+                TextField("", text: $fieldText, prompt: Text(textForPlaceholder).foregroundColor(.white))
                     .multilineTextAlignment(.leading)
                     .font(.title3)
                     .bold()
                     .disableAutocorrection(true)
+                    .textContentType(secureContext)
             }
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(loginAttempted ?? false ? (isUsernameValid ? Color.white.opacity(0.3) : Color.red.opacity(0.3)) : Color.white.opacity(0.3))
+                    .fill(loginAttempted ? (isUsernameValid ? Color.white.opacity(0.3) : Color.red.opacity(0.3)) : Color.white.opacity(0.3))
             )
             .autocapitalization(.none)
             .textContentType(.emailAddress)
-            .onChange(of: username) { newValue in
+            .onChange(of: fieldText) { newValue in
                 isUsernameValid = ValidationHelper.isValidUsername(newValue)
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(loginAttempted ?? false ? (isUsernameValid ? Color.white : Color.red) : Color.white, lineWidth: 2)
+                    .stroke(loginAttempted ? (isUsernameValid ? Color.white : Color.red) : Color.white, lineWidth: 2)
             )
         }
 }

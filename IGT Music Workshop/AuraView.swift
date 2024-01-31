@@ -10,6 +10,9 @@ import SwiftUI
 
 struct AuroraView: View {
     
+    @Binding var loginAttempted: Bool
+    @Binding var loginSuccessful: Bool
+    
     
     private enum AnimationProperties {
         static let animationSpeed: Double = 4
@@ -17,13 +20,10 @@ struct AuroraView: View {
         static let blurRadius: CGFloat = 160
     }
     
-    @Binding var loginAttempted: Bool?
-    @Binding var loginSuccessful: Bool?
-    
-    init(loginAttempted: Binding<Bool?> = .constant(nil), loginSuccessful: Binding<Bool?> = .constant(nil)) {
-        self._loginAttempted = loginAttempted
-        self._loginSuccessful = loginSuccessful
-    }
+    init(loginAttempted: Bool = false, loginSuccessful: Bool = true) {
+            self._loginAttempted = Binding.constant(loginAttempted)
+            self._loginSuccessful = Binding.constant(loginSuccessful)
+        }
     
     @State private var timer = Timer.publish(every: AnimationProperties.timerDuration, on: .main, in: .common).autoconnect()
     @StateObject private var animator = CircleAnimator(colors: AuroraColors.all)
@@ -33,8 +33,9 @@ struct AuroraView: View {
             ForEach(animator.circles) { circle in
                 MovingCircle(originOffset: circle.position)
                     .foregroundColor(
-                        loginAttempted ?? false && loginSuccessful ?? true
-                        ? .red.opacity(0.2)
+                        loginAttempted ? (loginSuccessful
+                        ? circle.color
+                        : .red.opacity(0.2))
                         : circle.color
                     )
             }
