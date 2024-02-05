@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A3B7F952B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */; };
-		4A3B7F972B53C0EB000C47F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7F962B53C0EB000C47F0 /* ContentView.swift */; };
+		4A3B7F972B53C0EB000C47F0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7F962B53C0EB000C47F0 /* MainView.swift */; };
 		4A3B7F992B53C0EE000C47F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B7F982B53C0EE000C47F0 /* Assets.xcassets */; };
 		4A3B7F9C2B53C0EE000C47F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B7F9B2B53C0EE000C47F0 /* Preview Assets.xcassets */; };
 		4A3B7FA62B53C0EE000C47F0 /* IGT_Music_WorkshopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FA52B53C0EE000C47F0 /* IGT_Music_WorkshopTests.swift */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		4A3B7F912B53C0EB000C47F0 /* IGT Music Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IGT Music Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopApp.swift; sourceTree = "<group>"; };
-		4A3B7F962B53C0EB000C47F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4A3B7F962B53C0EB000C47F0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4A3B7F982B53C0EE000C47F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A3B7F9B2B53C0EE000C47F0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A3B7FA12B53C0EE000C47F0 /* IGT Music WorkshopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IGT Music WorkshopTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */,
-				4A3B7F962B53C0EB000C47F0 /* ContentView.swift */,
+				4A3B7F962B53C0EB000C47F0 /* MainView.swift */,
 				4AC53C3C2B64507B00746C27 /* LoginView.swift */,
 				4A6552F72B67C280004996FC /* RegistrationView.swift */,
 				4A6552F52B66B9CB004996FC /* TextFields.swift */,
@@ -274,7 +274,7 @@
 			files = (
 				4AC53C3D2B64507B00746C27 /* LoginView.swift in Sources */,
 				4AC53C3F2B64516800746C27 /* AuraView.swift in Sources */,
-				4A3B7F972B53C0EB000C47F0 /* ContentView.swift in Sources */,
+				4A3B7F972B53C0EB000C47F0 /* MainView.swift in Sources */,
 				4A6552F82B67C280004996FC /* RegistrationView.swift in Sources */,
 				4A6552F42B658CE7004996FC /* Validation.swift in Sources */,
 				4A3B7F952B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift in Sources */,
@@ -445,11 +445,14 @@
 				DEVELOPMENT_TEAM = KASPKC8937;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,9 +460,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IGT.IGT-Music-Workshop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -474,11 +481,14 @@
 				DEVELOPMENT_TEAM = KASPKC8937;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,9 +496,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IGT.IGT-Music-Workshop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -504,9 +518,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IGT.IGT-Music-WorkshopTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IGT Music Workshop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IGT Music Workshop";
 			};
 			name = Debug;
@@ -523,9 +541,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IGT.IGT-Music-WorkshopTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IGT Music Workshop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IGT Music Workshop";
 			};
 			name = Release;
@@ -540,9 +562,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IGT.IGT-Music-WorkshopUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = "IGT Music Workshop";
 			};
 			name = Debug;
@@ -557,9 +583,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IGT.IGT-Music-WorkshopUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = "IGT Music Workshop";
 			};
 			name = Release;

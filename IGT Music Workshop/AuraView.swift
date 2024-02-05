@@ -74,7 +74,7 @@ private enum AuroraColors {
     }
     
     static var backgroundColor: Color {
-        Color.black
+        Color(red: 0/255, green: 0/255, blue: 0/255)
     }
 }
 

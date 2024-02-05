@@ -22,11 +22,14 @@ struct LoginView: View {
             ZStack {
                 VStack {
                     Spacer()
-                    Text("IGT \nMUSIC")
-                        .font(.largeTitle)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.accentColor)
+//                    Text("IGT \nMUSIC")
+//                        .font(.largeTitle)
+//                        .bold()
+//                        .multilineTextAlignment(.center)
+//                        .foregroundColor(.accentColor)
+                    Image("Logo-Second")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                     Spacer()
                     VStack (spacing: 16) {
                         Text("Вход")
@@ -36,24 +39,27 @@ struct LoginView: View {
                         StartTextFields(fieldText: $username,textForPlaceholder: "Логин", iconName: "person.fill", loginAttempted: loginAttempted, secureContext: .username)
                         StartSecureFields(secureText: $password ,textForPlaceholder: "Пароль", image: "lock.fill", loginAttempted: loginAttempted, secureContext: .password)
                         
-                        Button(action: {
-                            isUsernameValid = ValidationHelper.isValidUsername(username)
-                            isPasswordValid = ValidationHelper.isValidPassword(password)
-                            loginAttempted = true
-                            loginSuccessful = ValidationHelper.isValidInput(username: isUsernameValid, password: isPasswordValid)
-                            print(loginSuccessful)
-                        }) {
-                            Text("Войти")
-                                .padding(16)
-                                .foregroundColor(.white)
-                                .bold()
-                                .font(.title3)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(8)
+                        NavigationLink(destination: MainView(), isActive: $loginSuccessful) {
+                            Button(action: {
+                                isUsernameValid = ValidationHelper.isValidUsername(username)
+                                isPasswordValid = ValidationHelper.isValidPassword(password)
+                                loginAttempted = true
+                                loginSuccessful = ValidationHelper.isValidInput(username: isUsernameValid, password: isPasswordValid)
+                                print(loginSuccessful)
+                                
+                            }) {
+                                Text("Войти")
+                                    .padding(16)
+                                    .foregroundColor(.white)
+                                    .bold()
+                                    .font(.title3)
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.accentColor)
+                                    .cornerRadius(8)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .padding(.bottom, 16)
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding(.bottom, 16)
                         
                         HStack {
                             Text("Нет аккаунта?")
@@ -73,14 +79,12 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
             }
-            .background(AuroraView(loginAttempted: loginAttempted, loginSuccessful: loginSuccessful))
+            .background(AuroraView(loginAttempted: loginAttempted, loginSuccessful: loginSuccessful).ignoresSafeArea(.all))
         }
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginView()
-//    }
+//#Preview {
+//    LoginView()
 //}
 
