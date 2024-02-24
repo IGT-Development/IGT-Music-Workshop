@@ -39,7 +39,7 @@ struct LoginView: View {
                         StartTextFields(fieldText: $username,textForPlaceholder: "Логин", iconName: "person.fill", loginAttempted: loginAttempted, secureContext: .username)
                         StartSecureFields(secureText: $password ,textForPlaceholder: "Пароль", image: "lock.fill", loginAttempted: loginAttempted, secureContext: .password)
                         
-                        NavigationLink(destination: MainView(), isActive: $loginSuccessful) {
+                        NavigationLink(destination: MainView().navigationBarBackButtonHidden(true), isActive: $loginSuccessful) {
                             Button(action: {
                                 isUsernameValid = ValidationHelper.isValidUsername(username)
                                 isPasswordValid = ValidationHelper.isValidPassword(password)
@@ -84,7 +84,7 @@ struct LoginView: View {
     }
 }
 
-//#Preview {
-//    LoginView()
-//}
+#Preview {
+    LoginView()
+}
 

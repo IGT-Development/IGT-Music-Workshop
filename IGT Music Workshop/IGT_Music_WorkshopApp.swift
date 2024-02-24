@@ -11,7 +11,8 @@ import SwiftUI
 struct IGT_Music_WorkshopApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            //LoginView()
+             MainView()
                 .preferredColorScheme(.dark)
         }
     }

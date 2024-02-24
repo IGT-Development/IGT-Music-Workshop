@@ -41,7 +41,7 @@ struct RegistrationView: View {
                     .foregroundColor(.white)
                 StartTextFields(fieldText: $email, textForPlaceholder: "Почта", iconName: "person.fill", loginAttempted: loginAttempted, secureContext: .emailAddress)
                     .focused($isFieldFocused)
-                StartTextFields(fieldText: $username, textForPlaceholder: "Логин", iconName: "person.fill", loginAttempted: loginAttempted, secureContext: .username)
+                StartTextFields(fieldText: $username, textForPlaceholder: "Логин", iconName: "envelope", loginAttempted: loginAttempted, secureContext: .username)
                     .focused($isFieldFocused)
                 StartSecureFields(secureText: $password, textForPlaceholder: "Пароль", image: "lock.fill", loginAttempted: loginAttempted, secureContext: .newPassword)
                     .focused($isFieldFocused)
