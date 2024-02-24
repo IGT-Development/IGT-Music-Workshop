@@ -10,12 +10,18 @@ import SwiftUI
 
 struct RecentAlbums: View {
     
-    @StateObject var albumStore = AlbumStore()
+    @StateObject private var albumStore: AlbumStore
+    private let userId: Int
     
-    let columns = [
+    private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+    
+    init(userId: Int) {
+        self.userId = userId
+        self._albumStore = StateObject(wrappedValue: AlbumStore(userId: userId, albumRepository: LocalAlbumRepository()))
+    }
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -43,3 +49,4 @@ struct RecentAlbums: View {
         }
     }
 }
+

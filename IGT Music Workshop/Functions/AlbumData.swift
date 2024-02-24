@@ -12,14 +12,14 @@ protocol AlbumRepository {
 }
 
 class LocalAlbumRepository: AlbumRepository {
-    // Сохраните альбомы пользователя в локальной переменной
     private var userAlbums: [Int: [Album]] = [:]
     
     init() {
-        // Пример данных для тестирования
+        // Данные для тестирования
         userAlbums[1] = [
-            Album(id: 1, cover: "cover1", title: "Album 1", artist: "Artist 1"),
-            Album(id: 2, cover: "cover2", title: "Album 2", artist: "Artist 2")
+            Album(id: 1, cover: "Cover1", title: "My first love", artist: "Linda"),
+            Album(id: 2, cover: "Cover2", title: "The heartbrake", artist: "Luis"),
+            Album(id: 3, cover: "Cover3", title: "IGT Music", artist: "Gdeperry")
         ]
     }
     
@@ -35,15 +35,13 @@ class LocalAlbumRepository: AlbumRepository {
 //class RemoteAlbumRepository: AlbumRepository {
 //    func getAlbums(completion: @escaping ([Album]) -> Void) {
 //        // Логика для загрузки данных с сервера
-//        // Например, использование URLSession для выполнения запроса к API сервера
-//        // Затем парсинг полученных данных и вызов completion с полученным результатом
 //    }
 //}
 
 class AlbumStore: ObservableObject {
     @Published var albums: [Album] = []
-    var albumRepository: AlbumRepository
-    let userId: Int
+    private var albumRepository: AlbumRepository
+    private let userId: Int
     
     init(userId: Int, albumRepository: AlbumRepository) {
         self.userId = userId

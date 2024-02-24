@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3526952B8A0433004DC747 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3526942B8A0433004DC747 /* ProfileView.swift */; };
+		4A3526972B8A043D004DC747 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3526962B8A043D004DC747 /* HomeView.swift */; };
+		4A3526992B8A0448004DC747 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3526982B8A0448004DC747 /* SearchView.swift */; };
+		4A35269B2B8A04BD004DC747 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35269A2B8A04BD004DC747 /* ProfileTab.swift */; };
+		4A35269E2B8A0628004DC747 /* ProfileMusicElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35269D2B8A0628004DC747 /* ProfileMusicElements.swift */; };
+		4A3526A02B8A06DB004DC747 /* RecentAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35269F2B8A06DB004DC747 /* RecentAlbums.swift */; };
+		4A3526A32B8A0B97004DC747 /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3526A22B8A0B97004DC747 /* AlbumData.swift */; };
 		4A3B7F952B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */; };
 		4A3B7F972B53C0EB000C47F0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7F962B53C0EB000C47F0 /* MainView.swift */; };
 		4A3B7F992B53C0EE000C47F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B7F982B53C0EE000C47F0 /* Assets.xcassets */; };
@@ -14,6 +21,7 @@
 		4A3B7FA62B53C0EE000C47F0 /* IGT_Music_WorkshopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FA52B53C0EE000C47F0 /* IGT_Music_WorkshopTests.swift */; };
 		4A3B7FB02B53C0EE000C47F0 /* IGT_Music_WorkshopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FAF2B53C0EE000C47F0 /* IGT_Music_WorkshopUITests.swift */; };
 		4A3B7FB22B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */; };
+		4A5EFC832B8A02820010FC72 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5EFC822B8A02820010FC72 /* Data.swift */; };
 		4A6552F42B658CE7004996FC /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6552F32B658CE7004996FC /* Validation.swift */; };
 		4A6552F62B66B9CB004996FC /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6552F52B66B9CB004996FC /* TextFields.swift */; };
 		4A6552F82B67C280004996FC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6552F72B67C280004996FC /* RegistrationView.swift */; };
@@ -39,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A3526942B8A0433004DC747 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4A3526962B8A043D004DC747 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4A3526982B8A0448004DC747 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4A35269A2B8A04BD004DC747 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
+		4A35269D2B8A0628004DC747 /* ProfileMusicElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMusicElements.swift; sourceTree = "<group>"; };
+		4A35269F2B8A06DB004DC747 /* RecentAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentAlbums.swift; sourceTree = "<group>"; };
+		4A3526A22B8A0B97004DC747 /* AlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
 		4A3B7F912B53C0EB000C47F0 /* IGT Music Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IGT Music Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopApp.swift; sourceTree = "<group>"; };
 		4A3B7F962B53C0EB000C47F0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -49,6 +64,7 @@
 		4A3B7FAB2B53C0EE000C47F0 /* IGT Music WorkshopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IGT Music WorkshopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3B7FAF2B53C0EE000C47F0 /* IGT_Music_WorkshopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopUITests.swift; sourceTree = "<group>"; };
 		4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_Music_WorkshopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4A5EFC822B8A02820010FC72 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		4A6552F32B658CE7004996FC /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		4A6552F52B66B9CB004996FC /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		4A6552F72B67C280004996FC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -81,6 +97,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3526922B8A038E004DC747 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A5EFC822B8A02820010FC72 /* Data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4A3526932B8A03A5004DC747 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				4A3526A22B8A0B97004DC747 /* AlbumData.swift */,
+				4A6552F32B658CE7004996FC /* Validation.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		4A35269C2B8A04CA004DC747 /* ScreenElements */ = {
+			isa = PBXGroup;
+			children = (
+				4A3526A12B8A0733004DC747 /* ProfileElements */,
+				4A6552F52B66B9CB004996FC /* TextFields.swift */,
+				4AC53C3E2B64516800746C27 /* AuraView.swift */,
+			);
+			path = ScreenElements;
+			sourceTree = "<group>";
+		};
+		4A3526A12B8A0733004DC747 /* ProfileElements */ = {
+			isa = PBXGroup;
+			children = (
+				4A35269A2B8A04BD004DC747 /* ProfileTab.swift */,
+				4A35269D2B8A0628004DC747 /* ProfileMusicElements.swift */,
+				4A35269F2B8A06DB004DC747 /* RecentAlbums.swift */,
+			);
+			path = ProfileElements;
+			sourceTree = "<group>";
+		};
 		4A3B7F882B53C0EB000C47F0 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				4A3B7F942B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift */,
-				4A3B7F962B53C0EB000C47F0 /* MainView.swift */,
-				4AC53C3C2B64507B00746C27 /* LoginView.swift */,
-				4A6552F72B67C280004996FC /* RegistrationView.swift */,
-				4A6552F52B66B9CB004996FC /* TextFields.swift */,
-				4A6552F32B658CE7004996FC /* Validation.swift */,
-				4AC53C3E2B64516800746C27 /* AuraView.swift */,
+				4A3526932B8A03A5004DC747 /* Functions */,
+				4A3526922B8A038E004DC747 /* Data */,
+				4A5EFC842B8A02EF0010FC72 /* Views */,
 				4A3B7F982B53C0EE000C47F0 /* Assets.xcassets */,
 				4A3B7F9A2B53C0EE000C47F0 /* Preview Content */,
 			);
@@ -140,6 +190,20 @@
 				4A3B7FB12B53C0EE000C47F0 /* IGT_Music_WorkshopUITestsLaunchTests.swift */,
 			);
 			path = "IGT Music WorkshopUITests";
+			sourceTree = "<group>";
+		};
+		4A5EFC842B8A02EF0010FC72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A3B7F962B53C0EB000C47F0 /* MainView.swift */,
+				4A3526962B8A043D004DC747 /* HomeView.swift */,
+				4A3526982B8A0448004DC747 /* SearchView.swift */,
+				4A3526942B8A0433004DC747 /* ProfileView.swift */,
+				4AC53C3C2B64507B00746C27 /* LoginView.swift */,
+				4A6552F72B67C280004996FC /* RegistrationView.swift */,
+				4A35269C2B8A04CA004DC747 /* ScreenElements */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,13 +336,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A35269E2B8A0628004DC747 /* ProfileMusicElements.swift in Sources */,
 				4AC53C3D2B64507B00746C27 /* LoginView.swift in Sources */,
+				4A3526952B8A0433004DC747 /* ProfileView.swift in Sources */,
 				4AC53C3F2B64516800746C27 /* AuraView.swift in Sources */,
+				4A3526972B8A043D004DC747 /* HomeView.swift in Sources */,
+				4A35269B2B8A04BD004DC747 /* ProfileTab.swift in Sources */,
 				4A3B7F972B53C0EB000C47F0 /* MainView.swift in Sources */,
 				4A6552F82B67C280004996FC /* RegistrationView.swift in Sources */,
 				4A6552F42B658CE7004996FC /* Validation.swift in Sources */,
 				4A3B7F952B53C0EB000C47F0 /* IGT_Music_WorkshopApp.swift in Sources */,
 				4A6552F62B66B9CB004996FC /* TextFields.swift in Sources */,
+				4A3526A32B8A0B97004DC747 /* AlbumData.swift in Sources */,
+				4A5EFC832B8A02820010FC72 /* Data.swift in Sources */,
+				4A3526A02B8A06DB004DC747 /* RecentAlbums.swift in Sources */,
+				4A3526992B8A0448004DC747 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

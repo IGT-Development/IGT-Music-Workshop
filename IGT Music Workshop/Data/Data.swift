@@ -20,13 +20,3 @@ struct Album {
     let title: String
     let artist: String
 }
-
-class AlbumStore: ObservableObject {
-    @Published var albums: [Album] = []
-    
-    init() {
-        for i in 1...30 {
-            albums.append(Album(id: i, cover: "AlbumImage", title: "Album \(i)", artist: "Artist \(i)"))
-        }
-    }
-}
