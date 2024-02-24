@@ -70,28 +70,7 @@ struct SearchView: View {
     }
 }
 
-struct MediaItem: Identifiable {
-    let id: UUID
-    var title: String
-    var icon: String
-}
 
-struct Album {
-    let id: Int
-    let cover: String
-    let title: String
-    let artist: String
-}
-
-class AlbumStore: ObservableObject {
-    @Published var albums: [Album] = []
-    
-    init() {
-        for i in 1...30 {
-            albums.append(Album(id: i, cover: "AlbumImage", title: "Album \(i)", artist: "Artist \(i)"))
-        }
-    }
-}
 
 struct ProfileView: View {
     @State var items: [MediaItem] = [
